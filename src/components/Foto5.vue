@@ -25,7 +25,7 @@
       <router-link to="0">
         <button class="btn btn-danger" @click="reiniciarG">reiniciarGaleria</button>
       </router-link>
-      <router-link :to="idFoto">
+      <router-link :to="{name:'galeria', params:{id: idFoto}}" @click.native="decreIdF">
         <button class="btn btn-warning"><< -</button>
       </router-link>
       <!--router-link :to="idFoto" -->
@@ -36,6 +36,11 @@
         <button class="btn btn-success">BackHome</button>
       </router-link>
     </nav>
+    <p>
+      para elementos Vue(pEj: router-link) se usa eventos
+      <strong>"Nativos del navegador"</strong>:
+      <i>@click.native</i> =/= @click
+    </p>
   </div>
 </template>
 
