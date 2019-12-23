@@ -1,8 +1,16 @@
 <template>
-  <div id="app">
+  <div id="app" >
     <img width="25rem" src="./assets/logo.png">
     <Lista></Lista>
     <!--HellowWorld></HellowWorld --> 
+    <nav  class="navbar nav box-shadow-lg bg-white rounded">
+      <li><router-link to="/Ruta1">Ruta1</router-link></li>
+      
+       <router-link :to="{name:'RDinamica', params:{id}}">Galeria|FOTO nº:
+         <input v-model="id" :min="1" :max="10"></number-input></router-link>  
+        </li>
+    </nav>
+
     <router-view/>
   </div>
 </template>
@@ -18,6 +26,11 @@ export default {
   components:{
     HellowWorld, 
     Lista
+  }, 
+  data(){
+    return {
+      id:2
+    }
   }
 }
 </script>

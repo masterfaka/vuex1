@@ -16,6 +16,11 @@ export default new Router({
       path: '/ruta1',
       name: 'Ruta1',
       component: ()=> import(/* webpackChunkName: "Ruta1" */'@/views/Ruta1') 
+    },
+    {
+      path: '/rDinamica/:id',
+      name: 'RDinamica',
+      component: ()=> import(/* webpackChunkName: "RDinamica" */'@/views/RDinamica') 
     }
   ]
 })

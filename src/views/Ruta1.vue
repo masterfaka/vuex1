@@ -1,7 +1,11 @@
 <template>
     <div>
-        componente enRutado
+        componente enRutado1
+    <nav>
+        <router-link to="/">BackHome</router-link>
+    </nav>
     </div>
+
 </template>
 
 <script>
