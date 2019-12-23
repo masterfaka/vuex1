@@ -6,9 +6,15 @@
     <nav  class="navbar nav box-shadow-lg bg-white rounded">
       <li><router-link to="/Ruta1">Ruta1</router-link></li>
       
-       <router-link :to="{name:'RDinamica', params:{id}}">Galeria|FOTO nº:
-         <input v-model="id" :min="1" :max="10"></number-input></router-link>  
+       <li><router-link :to="{name:'RDinamica', params:{id}}">Galeria|FOTO nº:
+         <input type="number" v-model="id" :min="1" :max="10"></input>
+         </router-link>  
         </li>
+        <router-link :to="{name:'galeria', params:{id:idFoto}}"> 
+          <button class="btn btn-primary">
+            GleriaDinamica2
+          </button>
+        </router-link>
     </nav>
 
     <router-view/>
@@ -18,6 +24,7 @@
 <script>
 import HellowWorld from './components/HelloWorld';
 import Lista from './components/Lista'
+import { mapState} from 'vuex'
 /*!!Se importa Store aki y se autoinyecta a
 todos los hijos automaticamente*/
 
@@ -31,6 +38,9 @@ export default {
     return {
       id:2
     }
+  },
+  computed:{
+    ...mapState(['idFoto'])
   }
 }
 </script>
